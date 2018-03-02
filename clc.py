@@ -1,9 +1,9 @@
 import argparse
 
-from core import Core
+import core
 
 
-def main_f():
+def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('mode', help='Mode', type=str)
@@ -11,13 +11,13 @@ def main_f():
 
     args = parser.parse_args()
 
-    core = Core()
+    clc_core = core.Core()
 
     if args.reset:
-        core.reset_page()
+        clc_core.reset_page()
 
-    core.quote_selection(args.mode)
+    clc_core.quote_selection(args.mode)
 
 
 if __name__ == '__main__':
-    main_f()
+    main()
